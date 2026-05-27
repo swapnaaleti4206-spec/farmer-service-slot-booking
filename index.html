@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Paddy Slot Booking System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="loginPage" class="card">
+<h2>📱 Mobile OTP Login</h2>
+<input type="tel" id="loginPhone" placeholder="Enter Mobile Number">
+<button onclick="sendOTP()">Send OTP</button>
+
+<div id="otpBox" style="display:none;">
+<input type="number" id="otpInput" placeholder="Enter OTP">
+<button onclick="verifyOTP()">Verify OTP</button>
+</div>
+</div>
+
+<div id="dashboard" style="display:none;">
+
+<header>🌾 Farmer Dashboard</header>
+
+<nav>
+<button onclick="showSection('register')">Registration</button>
+<button onclick="showSection('slot')">Book Slot</button>
+<button onclick="showSection('slotinfo')">Slot Information</button>
+</nav>
+
+<section id="register" class="section">
+<h3>Farmer Registration</h3>
+<input id="farmerName" placeholder="Farmer Name">
+<input id="address" placeholder="Address">
+<input id="landDetails" placeholder="Land Details">
+<button onclick="submitRegistration()">Submit</button>
+<p id="regResult"></p>
+</section>
+
+<section id="slot" class="section">
+<h3>Book Paddy Slot</h3>
+
+<input id="regNoInput" placeholder="Registration Number">
+<input id="bookingName" placeholder="Booking Name">
+
+<select id="district">
+<option>Warangal</option>
+<option>Guntur</option>
+</select>
+
+<select id="market">
+<option>APMC Market</option>
+<option>Rythu Bazaar</option>
+</select>
+
+<input type="date" id="slotDate">
+
+<select id="slotTime">
+<option>9AM-11AM</option>
+<option>11AM-1PM</option>
+<option>2PM-4PM</option>
+</select>
+
+<button onclick="bookslot()">Confirm Slot</button>
+
+</section>
+
+<section id="slotinfo" class="section">
+<h3>Slot Information</h3>
+<p id="slotDetails">No Slot Booked</p>
+<button onclick="cancelSlot()">Cancel Slot</button>
+</section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
